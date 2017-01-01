@@ -1,8 +1,19 @@
+h1 {
+    font-family: "Courier New", Courier, monospace;
+}
+
 body {
-  padding: 50px;
-  font: 16px "Courier New", Courier, monospace;
+    padding: 1%;
+}
+
+p {
+    font-size: 1.1em;
 }
 
 a {
-  color: #000;
+    color: #4579bc;
+    text-decoration: none;
+}
+.date {
+    font-size: 0.9em;
 }

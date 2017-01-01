@@ -27,6 +27,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
+
+//Access the MongoDB
+/*MongoClient.connect('mongodb://mottel:H3r3inbepoints@ds145168.mlab.com:45168/helpless', function (err, db) {
+    if (err) throw err;
+    db = collection('posts').find().toArray(function (err, result) {
+        if (err) throw err;
+        console.log(result)
+    })
+});*/
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
