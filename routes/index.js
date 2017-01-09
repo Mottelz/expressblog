@@ -14,30 +14,19 @@ var BlogpostSchema = new Schema({
     body : String,
     pubdate : { type: Date, default: Date.now },
     author : String,
+    psid: Number
 });
 
 var BlogpostModel = mongoose.model('Blogpost', BlogpostSchema);
 
 
-
-//the basic variables
-var title;
-var post;
-var date;
-var webtitle;
-
-
 /* GET post page. (WIP) */
 router.get('/:psid?', function(req, res, next) {
-       var postid = req.params.psid || 0; // if no psid is given in url, default to post 0
+       var postid = req.params.psid || 1; // if no psid is given in url, default to post 1
 
         var file_path = "../content/essays/" + postid + ".json";
         var content = require(file_path);
 
-        // BlogpostModel.findOne({psid : postid}, 'title post date webtitle', function (err, blogPost) {
-        //     if (err) return handleError(err);
-        //     console.log('%s \n %s', blogPost.title, blogPost.post);
-        // });
 
         res.render('index', { title: content.title, date: content.date, post: content.post, webtitle: content.webtitle});
     });
