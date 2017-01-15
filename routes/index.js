@@ -22,7 +22,7 @@ var BlogpostModel = mongoose.model('Blogpost', BlogpostSchema);*/
 
 /* GET post page. (WIP) */
 router.get('/:psid?', function(req, res, next) {
-       var postid = req.params.psid || 1; // if no psid is given in url, default to post 1
+       var postid = req.params.psid || 2; // if no psid is given in url, default to post 2
 
         var file_path = "../content/essays/" + postid + ".json";
         var content = require(file_path);
