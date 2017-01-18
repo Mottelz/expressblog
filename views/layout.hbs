@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Mottelz - {{webtitle}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-  <p class='date'>This site is currently under construction, but I didn't want to use that as an excuse to not start this project.</p>
-  <p class="date"><a href="/0">Essay 0</a> | <a href="/1">Essay 1</a> | <a href="/2">Essay 2</a></p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>{{webtitle}}</title>
+    <meta name="description" content="{{webtitle}}"/>
+    <link rel="shortcut icon" href="images/favicon.ico"/>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+<header>
+    <img class="logo" src="images/logo.png" alt="Mottelz Logo"/>
+    <h1>Mottelz.com</h1>
+    <p class="tag">An essay every week for the whole year.</p>
+    <nav>
+        <ul>
+            <a class="toggle">Essays <div class="menu">&#x2630;</div></a>
+            <ul class="drop">
+                <a class="nav" href="/0"><li>Essay 0</li></a>
+                <li class="line">|</li>
+                <a class="nav" href="/1"><li>Essay 1</li></a>
+                <li class="line">|</li>
+                <a class="nav" href="/2"><li>Essay 2</li></a>
+            </ul>
+        </ul>
+    </nav>
+</header>
+    <div id="main">
     {{{body}}}
+    </div>
+<footer>
+    <a target="_blank" href="https://twitter.com/mottelz"><img class="button" src="images/twitter.png" hvr="images/twitter-hvr.png" alt="Twitter"/></a>
+    <a target="_blank" href="mailto:shachna@gmail.com"><img class="button" src="images/email.png" hvr="images/email-hvr.png" alt="Email"/></a>
+</footer>
+<a href="#" id="up">Up</a>
+</body>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/script.min.js" type="text/javascript"></script>
   </body>
 </html>
