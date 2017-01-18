@@ -27,7 +27,7 @@ router.get('/:psid?', function(req, res, next) {
         var file_path = "../content/essays/" + postid + ".json";
         var content = require(file_path);
 
-        res.render('index', { title: content.title, date: content.date, post: content.post, webtitle: content.webtitle});
+        res.render('index', { title: content.title, date: content.date, post: content.post, webtitle: content.webtitle, author: content.author});
     });
 
 
