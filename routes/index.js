@@ -20,9 +20,9 @@ var router = express.Router();
 var BlogpostModel = mongoose.model('Blogpost', BlogpostSchema);*/
 
 
-/* GET post page. (WIP) */
+/* GET post page.*/
 router.get('/:psid?', function(req, res, next) {
-       var postid = req.params.psid || 2; // if no psid is given in url, default to post 2
+       var postid = req.params.psid || 3; // if no psid is given in url, default to post 3
 
         var file_path = "../content/essays/" + postid + ".json";
         var content = require(file_path);
