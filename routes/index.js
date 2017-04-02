@@ -23,7 +23,7 @@ var BlogpostModel = mongoose.model('Blogpost', BlogpostSchema);*/
 
 /*Homepage Render*/
 router.get('/', function(req, res, next) {
-    res.render('home');
+    res.render('home', {webtitle: "Mottelz - Home",});
 });
 
 
