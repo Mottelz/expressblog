@@ -20,15 +20,31 @@ var router = express.Router();
 var BlogpostModel = mongoose.model('Blogpost', BlogpostSchema);*/
 
 
-/* GET post page.*/
-router.get('/:psid?', function(req, res, next) {
-       var postid = req.params.psid || "8"; // if no psid is given in url, default to post 8
 
-        var file_path = "../content/essays/" + postid + ".json";
+/*Homepage Render*/
+router.get('/', function(req, res, next) {
+    res.render('home');
+});
+
+
+
+
+/* GET post page.*/
+router.get('/:posttype/:psid?', function(req, res, next) {
+        var postid = req.params.psid;
+        var posttype = req.params.posttype;
+
+
+        var file_path = "../content/" + posttype + "/" + postid + ".json";
         var content = require(file_path);
 
-        res.render('index', { title: content.title, date: content.date, post: content.post, webtitle: content.webtitle, author: content.author, prev: content.prev, next: content.next});
-    });
 
+        if (posttype == "essays") {
+        res.render('index', { title: content.title, date: content.date, post: content.post, webtitle: content.webtitle, author: content.author, prev: content.prev, next: content.next}); }
+
+        if (posttype == "poems"){
+            res.render('poems',{title: content.title, poem: content.poem,})
+        }
+    });
 
 module.exports = router;
