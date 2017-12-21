@@ -1,5 +1,5 @@
 node_modules/
-.idea/workspace.xml
+.idea/
 static/
 
 #From the GitHub Project at https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
@@ -29,4 +29,3 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-.idea/inspectionProfiles/

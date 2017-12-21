@@ -24,9 +24,9 @@ var BlogpostModel = mongoose.model('Blogpost', BlogpostSchema);*/
 /*Homepage Render*/
 router.get('/', function(req, res, next) {
     // res.render('home', {webtitle: "Mottelz - Home"});
-    var file_path = "../content/poems/1.json";
+    var file_path = "../content/dev/0.json";
     var content = require(file_path);
-    res.render('poems',{title: content.title, poem: content.poem,})
+    res.render('index', { type: 'dev', title: content.title, date: content.date, post: content.post, webtitle: content.webtitle, author: content.author, prev: content.prev, next: content.next});
 });
 
 
