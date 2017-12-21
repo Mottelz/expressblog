@@ -23,7 +23,10 @@ var BlogpostModel = mongoose.model('Blogpost', BlogpostSchema);*/
 
 /*Homepage Render*/
 router.get('/', function(req, res, next) {
-    //res.render('home', {webtitle: "Mottelz - Home"});
+    // res.render('home', {webtitle: "Mottelz - Home"});
+    var file_path = "../content/poems/1.json";
+    var content = require(file_path);
+    res.render('poems',{title: content.title, poem: content.poem,})
 });
 
 
