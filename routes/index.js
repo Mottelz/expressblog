@@ -42,12 +42,14 @@ router.get('/:posttype/:psid?', function(req, res, next) {
         var content = require(file_path);
 
 
-        if (posttype == "essays") {
+        if (posttype == "essays" || posttype == "dev") {
         res.render('index', { title: content.title, date: content.date, post: content.post, webtitle: content.webtitle, author: content.author, prev: content.prev, next: content.next}); }
 
         if (posttype == "poems"){
             res.render('poems',{title: content.title, poem: content.poem,})
         }
+
+
     });
 
 module.exports = router;
