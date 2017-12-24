@@ -1,6 +1,7 @@
-node_modules/
-.idea/
-static/
+node_modules/*
+node_modules
+.idea
+static
 
 #From the GitHub Project at https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
 *.DS_Store
@@ -29,3 +30,4 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+/node_modules/
