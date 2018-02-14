@@ -24,7 +24,7 @@ router.get('/podcast/:fileid', function(req, res, next) {
     var fileid = req.params.fileid;
     var file = '../public/podcast/' + fileid;
     var buffer = new Buffer(file);
-    res.sendSeekable(buffer);
+    res.sendSeekable(buffer, { type: 'audio/mp3' });
 });
 
 
