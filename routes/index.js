@@ -11,6 +11,17 @@ const feed = new podcast({
     author:'Vernaculis'
 });
 
+feed.addItem({
+    title:'01 Chapter One',
+    description:'Stuff starts happening.',
+    url:'http://www.mottelz.com/podcast/01_Chapter_One.mp3',
+    author:'Vernaculis',
+    date:'Feb 5, 2018'
+});
+
+const xml = feed.buildXml();
+
+
 /*Homepage Render*/
 router.get('/', function(req, res, next) {
     // res.render('home', {webtitle: "Mottelz - Home"});
@@ -28,14 +39,6 @@ router.get('/', function(req, res, next) {
 
 /* GET Podcast Feed*/
 router.get('/podcast',function(req,res,next) {
-    feed.addItem({
-        title:'01 Chapter One',
-        description:'Stuff starts happening.',
-        url:'http://www.mottelz.com/podcast/01_Chapter_One.mp3',
-        author:'Vernaculis',
-        date:'Feb 5, 2018'
-    });
-    const xml = feed.buildXml();
     res.send(xml);
 });
 
