@@ -4,20 +4,20 @@ const router = express.Router();
 
 
 const feedData = {
-    title: 'Only the Knowing' ,
-    description: 'The debut novel of YouTube personality Vernaculis.',
-    feed_url: 'https://mottelz.herokuapp.com/rss.xml',
-    site_url: 'https://mottelz.herokuapp.com/',
+    title: "Only the Knowing",
+    description: "The debut novel of YouTube personality Vernaculis.",
+    feed_url: "https://mottelz.herokuapp.com/podcast",
+    site_url: "https://mottelz.herokuapp.com/",
     // image_url: 'http://example.com/icon.png',
-    language: 'en',
-    author:'Vernaculis'
+    language: "en",
+    author:"Vernaculis"
 };
 const episodes = [{
-    title:'01 Chapter One',
-    description:'Stuff starts happening.',
-    url:'https://mottelz.herokuapp.com/podcast/01_Chapter_One.mp3',
-    author:'Vernaculis',
-    date:'Feb 5, 2018'
+    title:"01 Chapter One",
+    description:"Stuff starts happening.",
+    url:"https://mottelz.herokuapp.com/podcast/01_Chapter_One.mp3",
+    author:"Vernaculis",
+    date:"Feb 5, 2018"
 }];
 
 const feed = podcast(feedData,episodes);
