@@ -20,7 +20,7 @@ const episodes = [{
     date:'Feb 5, 2018'
 }];
 
-const feed = new podcast(feedData,episodes);
+const feed = podcast(feedData,episodes);
 
 router.get('/podcast/:fileid', function(req, res, next) {
     var fileid = req.params.fileid;
@@ -46,7 +46,7 @@ router.get('/', function(req, res, next) {
 
 /* GET Podcast Feed*/
 router.get('/podcast',function(req,res,next) {
-    res.send(xml);
+    res.send(feed);
 });
 
 /* GET post page.*/
