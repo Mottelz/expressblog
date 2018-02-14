@@ -21,6 +21,12 @@ feed.addItem({
 
 const xml = feed.buildXml();
 
+router.get('/podcast/:fileid', function(req, res, next) {
+    var fileid = req.params.fileid;
+    var file = '../public/podcast/' + fileid;
+    res.send(file);
+});
+
 
 /*Homepage Render*/
 router.get('/', function(req, res, next) {
