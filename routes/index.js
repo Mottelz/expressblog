@@ -2,13 +2,11 @@ const express = require('express');
 const podcast = require('podcast2');
 const router = express.Router();
 
-
 const feedData = {
     title: "Only the Knowing",
     description: "The debut novel of YouTube personality Vernaculis.",
     feed_url: "https://mottelz.herokuapp.com/podcast",
     site_url: "https://mottelz.herokuapp.com/",
-    // image_url: 'http://example.com/icon.png',
     language: "en",
     author:"Vernaculis"
 };
@@ -25,7 +23,8 @@ const feed = podcast(feedData,episodes);
 router.get('/podcast/:fileid', function(req, res, next) {
     var fileid = req.params.fileid;
     var file = '../public/podcast/' + fileid;
-    res.send(file);
+    var buffer = new Buffer(file);
+    res.sendSeekable(buffer);
 });
 
 
